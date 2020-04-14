@@ -19,7 +19,7 @@ command touch "$CACHE_SEEN_IDS"
 download() {
     local url ORG="$1" PRJ="$2"
     eval "url=$URL"
-    reply=( "${(@f)"$(curl --silent -i $url)"}" )
+    reply=( "${(@f)"$(curl --netrc --silent -i $url)"}" )
 }
 
 while (( 1 )) {
